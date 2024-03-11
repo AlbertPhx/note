@@ -22,7 +22,9 @@ jobs:
   super-lint:
     name: Lint code base
     runs-on: ubuntu-latest
+    # ubantu, windows or macos
     steps:
+      #can run command, setup tasks OR run an action
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -35,3 +37,4 @@ jobs:
 
 - Super-linter just like eslink, to check your code follow the rules
 - indentation is important
+- one job will run on one server, runs in parallel by default
