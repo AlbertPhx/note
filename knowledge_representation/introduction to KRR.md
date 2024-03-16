@@ -1,11 +1,29 @@
-- Logical operators
+- Declarative sentences : we consider whether they're true or not
+- Non-declarative sentences : we can't tell they're true or not
+
+- Logical operators (connectives)
+
   - ¬ (Not): Represents logical negation.
   - ∧ (And): Represents logical conjunction.
   - ∨ (Or): Represents logical disjunction.
   - → (Implies): Represents the logical implication, indicating a "if ... then ..." relationship.
   - ↔ (If and only if/Iff): Represents a biconditional relationship, indicating "if and only if".
 
-![alt text](table.png)
+- Propositional formula of signature
+
+  - Every atom is a formula
+  - Both 0-place connetives are formulas
+  - For any binary conective ⊙, if F and G are formulats then (F ⊙ G) is a formula
+  - For example
+
+    1.  ⊥ => atom => Propositional formula
+    2.  q -> p => don't have () => not Propositional formula
+    3.  (¬(q) v r ) => we don't need () for q => not!
+    4.  ⊥¬ T = no () => not!
+
+    - 檢查是否有()，但是 atom 不用()
+
+    ![alt text](table.png)
 
 - Propositional connectives
 
@@ -54,8 +72,8 @@
   - atom : proposition which is true or false
 - Conjunctive normal form
   - literal : either an atom p or ¬p
-  - clause : OR OR OR
-  - CNM : AND AND AND !
+  - clause : (A OR B OR C ) 整個就是 clause
+  - CNF : AND AND AND ! 把 clause 串起來就變成 CNF
   - Question
     - (¬q v p v r) ∧ (¬p v r) ∧ q (O)
     - (¬(q v p) v r) ∧ (¬p v r) ∧ q (X)
@@ -75,6 +93,8 @@
         <=> (¬ p v r) ∧ ( g v r)
       - u <-> p ∧ q  
         <=> (u ->(p ∧ q )) ∧ ((p ∧ q->u)) （變成箭頭）
-        <=> (¬ u v (p ∧ g)) ∧ (¬ ( p ∧ g) v u)) （把箭頭弄掉）
+        <=> (¬ u v (p ∧ g)) ∧ (¬ ( p ∧ g) v u)（把箭頭弄掉）
         <=> (¬u v ( p ∧ g )) ∧ (¬ p v ¬ q v u) （把括號裡頭的變成或）
         <=> (¬u v p) ∧ (¬u v q) ∧ (¬ p v ¬ q v u) (把且改成或)
+- Unit propagation (very important!!!)
+  - find interpration for all the atom, go step by step!
