@@ -51,6 +51,7 @@
     3.
 
 - Equivalence
+
   - have the same meaning
   - F ↔ G is a tautology
   - Question
@@ -64,10 +65,31 @@
        - (true -> false) -> (true ∧ true ) => false -> true => true vs false (false, not equivalent!)
     - More example
     - ## Some useful equivalence
-- Entialment
 
+- Entialment (蘊含、必然導致)
+
+  - A set Gamma (Γ) of formulas entails (⊨) a formula F ( Γ ⊨ F)
   - all interpretation that satisfies the all formulas in gamma satisfies F also
+  - Example
+    - {A,B} ⊨ A ∧ B (true)
+    - {A,A->B} ⊨ B (true)
+    - {A} ⊨ A v B (true)
+    - {A} ⊨ A ∧ B (false)
+    - ∅ ⊨ B (false)
+    - {⊥} ⊨ B (TRUE,因為沒有任何滿足{⊥}的)
+    - TL ∧ ¬ T -> JL, TL, ¬JL ⊨ T
+    - only interpretation : TL= true, T= true, T = true, J L = false (false -> false => true)
+    - false -> false (true) 很重要！
+  - check not entail is easlier
+  - 前面的必須為 true ，推倒到後面的也為 true
+  - 後面的事 logical consequences of Γ
 
+- F is a tautology iff (<->) ¬ unsatisfiable
+
+  - Example : p v ¬ p is a tautology (有一些滿足就好) iff ¬(p v ¬ p) is unsatisfiable (無論怎樣都是 false)
+
+- How are equivalence and entitlement relarted?
+  - F is equivalent to G iff
 - Propositional Logic
   - atom : proposition which is true or false
 - Conjunctive normal form
@@ -98,3 +120,6 @@
         <=> (¬u v p) ∧ (¬u v q) ∧ (¬ p v ¬ q v u) (把且改成或)
 - Unit propagation (very important!!!)
   - find interpration for all the atom, go step by step!
+  - F <- F|p =(T ∧ (¬T v ¬q)∧ (¬ q v r ) ∧( q v ¬r ))
+    <=> ¬ q ∧( ¬q v r) ∧ (¬ ) etc...
+  - limitation of unit propagation: what if there is no unit clause?
