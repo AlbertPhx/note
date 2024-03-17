@@ -1,6 +1,7 @@
 - Declarative sentences : we consider whether they're true or not
 - Non-declarative sentences : we can't tell they're true or not
 
+- Abductive reasoning : Simplest and most likely explation
 - Logical operators (connectives)
 
   - ¬ (Not): Represents logical negation.
@@ -122,4 +123,5 @@
   - find interpration for all the atom, go step by step!
   - F <- F|p =(T ∧ (¬T v ¬q)∧ (¬ q v r ) ∧( q v ¬r ))
     <=> ¬ q ∧( ¬q v r) ∧ (¬ ) etc...
+  - 消消樂~
   - limitation of unit propagation: what if there is no unit clause?
